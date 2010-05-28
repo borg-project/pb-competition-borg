@@ -1,0 +1,84 @@
+{
+    "solvers" : {
+        "pb/other/clasp-1.3.3" : {
+			"type"    : "pb_competition",
+            "command" : [
+                "HERE/other/clasp-1.3.3/clasp-1.3.3-x86-linux",
+				"--seed=RANDOMSEED",
+                "BENCHNAME"
+                ]
+            },
+        "pb/other/sat4j-pb-v20090829" : {
+			"type"    : "pb_competition",
+            "command" : [
+                "java",
+                "-server",
+                "-Xms1300m",
+                "-Xmx1300m",
+                "-jar",
+                "HERE/other/sat4j-pb-v20090826/org.sat4j.pb.jar",
+                "BENCHNAME"
+                ]
+            },
+        "pb/other/sat4j-pb-v20090829-cutting" : {
+			"type"    : "pb_competition",
+            "command" : [
+                "java",
+                "-server",
+                "-Xms1300m",
+                "-Xmx1300m",
+                "-jar",
+                "HERE/other/sat4j-pb-v20090826/org.sat4j.pb.jar",
+                "CuttingPlanes",
+                "BENCHNAME"
+                ]
+            },
+        "pb/competition_2010/bsolo_pb10-l1" : {
+			"type"    : "pb_competition",
+            "command" : [
+                "HERE/competition_2010/bsolo_pb10/bsolo_pb10",
+                "-t1000000",
+                "-mMEMLIMIT",
+                "-l1",
+                "BENCHNAME"
+                ]
+            },
+        "pb/competition_2010/bsolo_pb10-l2" : {
+			"type"    : "pb_competition",
+            "command" : [
+                "HERE/competition_2010/bsolo_pb10/bsolo_pb10",
+                "-t1000000",
+                "-mMEMLIMIT",
+                "-l2",
+                "BENCHNAME"
+                ]
+            },
+        "pb/competition_2010/bsolo_pb10-l3" : {
+			"type"    : "pb_competition",
+            "command" : [
+                "HERE/competition_2010/bsolo_pb10/bsolo_pb10",
+                "-t1000000",
+                "-mMEMLIMIT",
+                "-l3",
+                "BENCHNAME"
+                ]
+            },
+        "pb/competition_2010/wbo1.4a" : {
+			"type"    : "pb_competition",
+            "command" : [
+                "HERE/competition_2010/wbo1.4a/wbo1.4a",
+                "-file-format=opb",
+                "BENCHNAME"
+                ]
+            },
+        "pb/competition_2010/wbo1.4b" : {
+			"type"    : "pb_competition",
+            "command" : [
+                "HERE/competition_2010/wbo1.4b/wbo1.4b",
+                "-file-format=opb",
+                "BENCHNAME"
+                ]
+            }
+		}
+    }
+

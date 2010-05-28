@@ -1,0 +1,88 @@
+clasp - A conflict learning asp solver:
+---------------------------------------
+clasp is distributed under the GNU Public License, see file COPYING for details.
+It is written in (mostly) Standard-C++ and was successfully built and run under 
+Linux (x86-32, x86-64) using gcc and Windows (x86-32) using Microsoft Visual Studio and MinGW.
+
+Detailed information (including a User's manual) can be found at: 
+  http://potassco.sourceforge.net/
+
+Distribution contents:
+  COPYING      - GNU Public License
+  CHANGES      - Major changes between versions
+  README       - This file
+  configure.{sh,bat}
+               - Simple script that creates Makefiles for building clasp (library and application) 
+  app/         - Source code directory of the command-line interface
+  libclasp/    - Directory of the clasp (static) library (sources, documentation, unit tests)
+  libprogram_opts/
+               - Library for parsing command-line options (needed by app)
+  build_vc/    - Directory containing Visual Studio project files for building clasp
+  tools/       - Some additional files
+  
+Make-based Build & Install
+--------------------------
+You'll need to have the GNU Compiler Collection (GCC) version 3 or
+better installed in order to build clasp. You'll also need GNU 
+make 3.80 or better.
+Note: 
+ In the following it is assumed that 'make' is an alias for the installed GNU make. If this
+ is not the case on your system, replace 'make' with the name of the GNU make  executable (e.g. gmake)
+Note:
+ On Windows the configure-script is configure.bat instead of configure.sh
+
+To build clasp:
+  ./configure.sh
+  cd build/release
+  make
+
+To install clasp:
+  make install
+	
+  By default, 'make install' will install clasp in '/usr/local/bin'
+  You can specify an installation prefix other than '/usr/local' 
+  by running the configure-script with the option '--prefix=PATH'.
+  Alternatively, use option '--bindir=PATH' to directly specify the
+  installation path. 
+
+  Finally, you can always skip installation and simply copy the
+  clasp executable to a directory of your choice.
+	
+To configure the build:
+  The configure-script supports different build configurations.
+  Type 
+    ./configure.sh --help 
+  to get an overview of all supported options.
+	
+Usage
+-----
+	clasp reads problem instances either from stdin, e.g 
+	  cat problem | clasp
+	or from a given file, e.g
+	  clasp problem
+	
+	Beside logic programs in SMODELS-format, clasp also supports SAT-problems in DIMACS-,
+	and PB-problems in (linear) OPB-format.
+	
+	Type
+	  clasp --help
+	to get an overview of the various options supported by clasp.
+	
+	In addition to printing status information, clasp also
+	provides information about the computation via its exit status.
+	The exit status is:
+	  10: if the problem was found to be satisfiable
+	  20: if the problem was proved to be unsatisfiable
+	   0: if the satisfiability of problem is not known, 
+	      because search was either interrupted or not started
+	 127: if clasp ran out of memory
+	Furthermore, the exit status of 1 indicates an error.
+	
+
+SAT-Race 2008:
+--------------
+	In the directory tools/ we provide a simple shell script named 'claspSR08.sh' which runs 
+	'clasp' in SAT-mode. Provided that the script is in the same directory as the 'clasp' 
+	executable just type:
+		claspSR08.sh <cnf>
+

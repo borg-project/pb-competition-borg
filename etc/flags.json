@@ -1,0 +1,7 @@
+{
+    "borg.solvers": [
+        "--solvers-file",
+        "$BORG_ROOT/etc/solvers/solvers.json"
+        ]
+    }
+
