@@ -1,14 +1,14 @@
-#!/usr/bin/env python2.6
+#!/usr/bin/env python
 """
 @author: Bryan Silverthorn <bcs@cargo-cult.org>
 """
 
 if __name__ == "__main__":
-    from os.path import join
-    from borg    import execute_borg
+    from os.path    import join
+    from borg_shell import execute_borg
 
     execute_borg(
-        support   = "ext",
+        support   = "etc",
         submodule = "src/dep",
         )
 

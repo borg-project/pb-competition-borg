@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.6
+#!/usr/bin/env python
 """
 @author: Bryan Silverthorn <bcs@cargo-cult.org>
 """
@@ -6,8 +6,8 @@
 if __name__ == "__main__":
     import sys
 
-    from os.path import join
-    from borg    import (
+    from os.path    import join
+    from borg_shell import (
         execute_borg,
         get_default_root,
         )
@@ -15,17 +15,15 @@ if __name__ == "__main__":
     (instance, seed) = sys.argv[1:]
 
     execute_borg(
-        support   = "ext",
+        support   = "etc",
         submodule = "src/dep",
         as_module = True,
         argv      = [
-            "utexas.tools.portfolio.solve",
+            "borg.tools.portfolio.solve",
             "-v",
-            "-m",
-            join(get_default_root(), "ext/dcm_model.pickle"),
-            "--seed",
-            seed,
+            join(get_default_root(), "etc/solver.pickle"),
             instance,
+            seed,
             ],
         )
 
