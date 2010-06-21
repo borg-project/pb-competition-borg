@@ -1,0 +1,30 @@
+\section{\label{sec:subsolvers}Portfolio Composition}
+
+Portfolio methods rely entirely on the performance of the solvers they employ,
+and are possible only because of the engineering and research involved in
+making those solvers effective. This version of {\tt borg-pb} considered 8
+subsolvers in its model, several groups of which were multiple
+parameterizations of the same solver.  Table \ref{tab:subsolvers} lists these
+solvers and their authors. Note that the final policy did not necessarily use
+every solver.
+\begin{table*}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+{\bf Name}                       & {\bf Author(s)}\\
+\midrule
+{\tt clasp-1.3.3}                & Martin Gebser, Benjamin Kaufmann, and Torsten Schaub\\
+{\tt sat4j-pb-v20090829}         & Daniel Le Berre and Anne Parrain\\
+{\tt sat4j-pb-v20090829-cutting} & Daniel Le Berre and Anne Parrain\\
+{\tt bsolo\_pb10-l1}             & Vasco Manquinho\\
+{\tt bsolo\_pb10-l2}             & Vasco Manquinho\\
+{\tt bsolo\_pb10-l3}             & Vasco Manquinho\\
+{\tt wbo1.4a}                    & Vasco Manquinho\\
+{\tt wbo1.4b}                    & Vasco Manquinho\\
+\bottomrule
+\end{tabular}
+\caption{\label{tab:subsolvers}Subsolvers considered by {\tt
+borg-pb-10.05.30}.}
+\end{center}
+\end{table*}
+
